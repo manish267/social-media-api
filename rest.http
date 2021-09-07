@@ -3,7 +3,7 @@ POST http://localhost:8800/api/auth/register
 Content-Type: application/json
 
     {
-        "username":"Manish",
+        "username":"manish",
         "email":"m@gmail.com",
         "password":"manish26"
     }
@@ -14,7 +14,104 @@ POST http://localhost:8800/api/auth/login
 Content-Type: application/json
 
     {
-        "username":"Manish",
         "email":"m@gmail.com",
         "password":"manish26"
     }
+
+
+### Update a user
+PUT http://localhost:8800/api/user/6135f3b23b688c6e152d4d07 
+Content-Type: application/json
+
+    {
+        "userId":"6135f3b23b688c6e152d4d07",
+        "desc":"this is updated account",
+        "password":"manish26"
+    }
+
+
+### Delete a user
+DELETE  http://localhost:8800/api/user/61360d6823a3cdf38c76d7f4 
+Content-Type: application/json
+
+    {
+        "userId":"61360d6823a3cdf38c76d7f4",
+        "email":"m@gmail.com",
+        "desc":"this is updated account",
+        "password":"manish26"
+    }
+
+### Get a user
+GET  http://localhost:8800/api/user/6136127edf48ad84ae585211 
+Content-Type: application/json
+
+    {
+        "userId":"61360d6823a3cdf38c76d7f4",
+        "email":"m@gmail.com",
+        "desc":"this is updated account",
+        "password":"manish26"
+    }
+
+
+### Follow a user
+PUT http://localhost:8800/api/user/61370bd9ab44c94adbda2126/follow 
+Content-Type: application/json
+
+    {
+        "userId":"61370bcdab44c94adbda2124"
+    }
+
+### UnFollow a user
+PUT http://localhost:8800/api/user/61370bd9ab44c94adbda2126/unfollow 
+Content-Type: application/json
+
+    {
+        "userId":"61370bcdab44c94adbda2124"
+    }    
+
+### create a post
+POST http://localhost:8800/api/posts 
+Content-Type: application/json
+
+    {
+        "userId":"61370bd9ab44c94adbda2126",
+        "desc":"Its my second post from yadav",
+        "img":"image.png"
+    }    
+
+### update a post
+PUT http://localhost:8800/api/posts/61370fc8d24d1b13f4422711
+Content-Type: application/json
+
+    {
+        "userId":"61370bd9ab44c94adbda2126",
+        "desc":"Its my updated post from manish",
+        "img":"image.png"
+    }        
+
+
+### delete a post
+DELETE http://localhost:8800/api/posts/61370f8fd24d1b13f442270f
+Content-Type: application/json
+
+    {
+        "userId":"61370bd9ab44c94adbda2126"
+    }            
+
+
+### like/dislike a post
+PUT http://localhost:8800/api/posts/61370fc8d24d1b13f4422711/like
+Content-Type: application/json
+
+    {
+        "userId":"61370bd9ab44c94adbda2126"
+    }       
+
+
+### get a post
+GET http://localhost:8800/api/posts/61370fc8d24d1b13f4422711/
+Content-Type: application/json
+
+    {
+        "userId":"61370bd9ab44c94adbda2126"
+    } 

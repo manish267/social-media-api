@@ -31,13 +31,29 @@ const userSchema=new mongoose.Schema({
         type:Array,
         default:[]
     },
-    following:{
+    followings:{
         type:Array,
         default:[]
     },
     isAdmin:{
         type:Boolean,
         default:false
+    },
+    desc:{
+        type:String,
+        max:50
+    },
+    city:{
+        type:String,
+        max:50
+    },
+    from:{
+        type:String,
+        max:50
+    },
+    relationShip:{
+        type:Number,
+        enum:["single","married","divorced","seperated"]
     }
 },{timestamps:true})
 
